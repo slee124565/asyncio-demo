@@ -5,6 +5,8 @@
 
 import collections
 from pprint import pprint
+from functools import reduce
+
 Scientist = collections.namedtuple('Scientist', [
     'name', 'field', 'born', 'nobel',
 ])
@@ -32,7 +34,6 @@ names_n_ages = tuple(map(
 
 pprint(names_n_ages)
 
-from functools import reduce
 
 total_age = reduce(
     lambda acc, val: acc + val['age'],
