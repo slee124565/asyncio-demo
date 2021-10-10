@@ -9,8 +9,10 @@ async def print_message_periodical(interval_seconds, message='keep alive'):
         start = time.time()
         end = start + interval_seconds
         while True:
-            await asyncio.sleep(0)
+            await asyncio.sleep(0.5)
             now = time.time()
+            if message == 'three':
+                print(f'{message} check: {now - end}')
             if now >= end:
                 break
 
